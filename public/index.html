@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- <script defer src="../dist/component-name/index.js"></script>
+  <script defer src="../dist/component-surname/index.js"></script> -->
+  <script defer src="../dist/index.js"></script>
+</head>
+
+<body>
+
+  <component-name name="Ivan"></component-name>
+  <component-surname surname="Vulovic" id="prezime" onMessage="customFn()"></component-surname>
+  <script>
+    const el = document.getElementById('prezime');
+    el.addEventListener('message', event => {
+      console.log(event.detail)
+    });
+    document.addEventListener('message', event => {
+      // alert('doc');
+    });
+    function customFn() {
+      console.log('custom')
+    }
+  </script>
+</body>
+
+</html>
